@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ivan/AndroidStudioProjects/GibalicaG1/app/src/main/res/layout/activity_camera.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ivan/AndroidStudioProjects/GibalicaG1/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ivan/AndroidStudioProjects/GibalicaG1/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/anita.karalyos/AndroidStudioProjects/Gibalica/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
       </map>
     </option>

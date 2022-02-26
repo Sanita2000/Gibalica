@@ -3,26 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextureView
-        android:id="@+id/textureView"
-        android:layout_width="327dp"
-        android:layout_height="502dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="329dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/settings_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_settings_24"
+        tools:ignore="RedundantDescriptionCheck"
+        android:onClick="goToSettings"/>
+
+    <Button
+        android:id="@+id/training_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="341dp"
+        android:text="Training"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
+        android:onClick="goToTraining"/>
 
-    <TextView
-        android:id="@+id/resulttextView"
+    <Button
+        android:id="@+id/compete_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No postition detected"
+        android:layout_marginTop="24dp"
+        android:onClick="goToCompete"
+        android:text="compete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textureView" />
+        app:layout_constraintEnd_toEndOf="@+id/training_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/training_button"
+        app:layout_constraintTop_toBottomOf="@+id/training_button"
+        app:layout_constraintVertical_bias="0.014" />
+
+    <Button
+        android:id="@+id/day_night_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:onClick="goToDayNight"
+        android:text="Day-Night"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/compete_button"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/compete_button"
+        app:layout_constraintTop_toBottomOf="@+id/compete_button"
+        app:layout_constraintVertical_bias="0.215" />
 </androidx.constraintlayout.widget.ConstraintLayout>
