@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-
     public void goToTraining(View v) {
         Intent iTraining = new Intent(this, CameraActivity.class);
         startActivity(iTraining);
@@ -32,7 +30,5 @@ public class MainActivity extends AppCompatActivity {
         Intent iSettings = new Intent(this, SettingsActivity.class);
         startActivity(iSettings);
     }
-
-
 
 }
