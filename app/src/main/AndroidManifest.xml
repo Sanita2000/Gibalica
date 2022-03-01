@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".HomeActivity">
         </activity>
         <activity
             android:name=".CompeteActivity"
@@ -42,19 +42,19 @@
         </activity>
         <activity
             android:name=".HelloActivity"
-            android:parentActivityName=".SplashActivity">
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".HelloActivity">
         </activity>
         <activity
             android:name=".TrainingActivity"
             android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity
+            android:name=".CompetingActivity"
+            android:parentActivityName=".CompeteActivity">
         </activity>
     </application>
     <uses-feature android:name="android.hardware.camera" />

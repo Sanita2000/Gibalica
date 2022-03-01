@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.228"
-        android:onClick="go"/>
+        android:onClick="goToHome"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -33,9 +33,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="308dp"
-        android:layout_height="39dp"
-        android:text="Welcome to Gibalica, interactive tool for practicing orientation in fun way"
+        android:layout_width="313dp"
+        android:layout_height="151dp"
+        android:text="Welcome to Gibalica, interactive tool for practicing orientation in a fun way"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,6 +52,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="goToGuide" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
