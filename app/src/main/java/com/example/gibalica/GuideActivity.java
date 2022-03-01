@@ -26,8 +26,8 @@ public class GuideActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager){
     SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
     adapter.addFragment(new Fragment1(), "F1");
-    adapter.addFragment(new Fragment2(), "F1");
-    adapter.addFragment(new Fragment3(), "F1");
+    adapter.addFragment(new Fragment2(), "F2");
+    adapter.addFragment(new Fragment3(), "F3");
     viewPager.setAdapter(adapter);
     }
 

@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
             };
 
             public void onFinish(){
+
                 startActivity(iHello);
+
             }
         }.start();
 

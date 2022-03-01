@@ -6,23 +6,23 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView81"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TTTTTTTTTEST"
+        android:text="Page one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/button61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Go to next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/textView81"
+        app:layout_constraintStart_toStartOf="@+id/textView81"
+        app:layout_constraintTop_toBottomOf="@+id/textView81"
         android:onClick="goToFragment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

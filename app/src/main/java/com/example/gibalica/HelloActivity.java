@@ -14,12 +14,12 @@ public class HelloActivity extends AppCompatActivity {
     }
 
     public void goToGuide(View v) {
-        Intent iTraining = new Intent(this, GuideActivity.class);
-        startActivity(iTraining);
+        Intent iGuide = new Intent(this, GuideActivity.class);
+        startActivity(iGuide);
     }
 
     public void goToHome(View v) {
-        Intent iTraining = new Intent(this, HomeActivity.class);
-        startActivity(iTraining);
+        Intent iHome = new Intent(this, HomeActivity.class);
+        startActivity(iHome);
     }
 }

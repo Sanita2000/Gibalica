@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".CameraActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".HomeActivity">
         </activity>
         <activity
             android:name=".SettingsActivity"
