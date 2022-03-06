@@ -27,6 +27,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.mlkit.vision.pose.accurate.AccuratePoseDetectorOptions;
+
 import java.util.Arrays;
 
 public class TrainingActivity extends AppCompatActivity {
@@ -210,6 +212,4 @@ public class TrainingActivity extends AppCompatActivity {
         mBackgroundThread.start();
         mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
     }
-
-
 }
