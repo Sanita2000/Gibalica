@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gibalica.mlkitextensions.CameraXLivePreviewActivity;
+
 
 public class HomeActivity extends AppCompatActivity {
     @Override
@@ -15,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void goToTraining(View v) {
-        Intent iTraining = new Intent(this, TrainingActivity.class);
+        Intent iTraining = new Intent(this, CameraXLivePreviewActivity.class);
         startActivity(iTraining);
     }
     public void goToCompete(View v) {

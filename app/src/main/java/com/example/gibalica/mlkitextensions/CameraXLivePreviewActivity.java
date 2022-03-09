@@ -92,7 +92,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     Log.d(TAG, "onCreate");
 
     cameraSelector = new CameraSelector.Builder().requireLensFacing(lensFacing).build();
-
+    Log.d(TAG, "cameraSelector");
     setContentView(R.layout.activity_vision_camerax_live_preview);
     previewView = findViewById(R.id.preview_view);
     if (previewView == null) {
