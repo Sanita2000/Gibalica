@@ -27,11 +27,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.google.mlkit.vision.pose.accurate.AccuratePoseDetectorOptions;
-
 import java.util.Arrays;
 
-public class TrainingActivity extends AppCompatActivity {
+public class CompetingActivity extends AppCompatActivity {
 
     private static final int REQUEST_CAMERA_PERMISSION = 200;
     private TextView resultTextView;
@@ -98,7 +96,7 @@ public class TrainingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
+        setContentView(R.layout.activity_competing);
 
         resultTextView = (TextView)findViewById(R.id.resulttextView);
         textureView = (TextureView)findViewById(R.id.textureView);
@@ -126,7 +124,7 @@ public class TrainingActivity extends AppCompatActivity {
 
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
-                    Toast.makeText(TrainingActivity.this, "Changed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CompetingActivity.this, "Changed", Toast.LENGTH_SHORT).show();
                 }
             },null);
         } catch (CameraAccessException e) {
@@ -212,4 +210,6 @@ public class TrainingActivity extends AppCompatActivity {
         mBackgroundThread.start();
         mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
     }
+
+
 }

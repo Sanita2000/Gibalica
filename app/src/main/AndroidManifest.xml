@@ -3,7 +3,7 @@
     package="com.example.gibalica">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
+    <uses-permission android:name="android.permission.hardware.camera2.full"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,8 +21,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".CameraActivity"
             android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity
+            android:name=".CompeteActivity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity
+            android:name=".DayNightActivity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity
+            android:name=".GuideActivity"
+            android:parentActivityName=".HelloActivity">
+        </activity>
+        <activity
+            android:name=".HelloActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:parentActivityName=".HelloActivity">
+        </activity>
+        <activity
+            android:name=".TrainingActivity"
+            android:parentActivityName=".HomeActivity">
+        </activity>
+        <activity
+            android:name=".CompetingActivity"
+            android:parentActivityName=".CompeteActivity">
         </activity>
         <activity android:name=".mlkitextensions.CameraXLivePreviewActivity" />
     </application>
