@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void goToTraining(View v) {
-        Intent iTraining = new Intent(this, CameraXLivePreviewActivity.class);
+        Intent iTraining = new Intent(this, StartTraining.class);
         startActivity(iTraining);
     }
     public void goToCompete(View v) {

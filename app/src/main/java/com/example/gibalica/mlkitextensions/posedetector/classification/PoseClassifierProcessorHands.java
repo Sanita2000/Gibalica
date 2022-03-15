@@ -21,9 +21,12 @@ import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Looper;
 import android.util.Log;
+
 import androidx.annotation.WorkerThread;
+
 import com.google.common.base.Preconditions;
 import com.google.mlkit.vision.pose.Pose;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,16 +37,16 @@ import java.util.Locale;
 /**
  * Accepts a stream of {@link Pose} for classification and Rep counting.
  */
-public class PoseClassifierProcessor {
+public class PoseClassifierProcessorHands {
   private static final String TAG = "PoseClassifierProcessor";
-  private static final String POSE_SAMPLES_FILE = "pose/fitness_poses_csvs_out_JJ.csv";
+  private static final String POSE_SAMPLES_FILE = "pose/fitness_poses_csvs_out.csv";
 
   // Specify classes for which we want rep counting.
   // These are the labels in the given {@code POSE_SAMPLES_FILE}. You can set your own class labels
   // for your pose samples.
-  private static final String JUMP_CLASS = "jump";
+  private static final String HANDS_CLASS = "raisedhand";
   private static final String[] POSE_CLASSES = {
-          JUMP_CLASS
+          HANDS_CLASS
   };
 
   private final boolean isStreamMode;
@@ -54,7 +57,7 @@ public class PoseClassifierProcessor {
   private String lastRepResult;
 
   @WorkerThread
-  public PoseClassifierProcessor(Context context, boolean isStreamMode) {
+  public PoseClassifierProcessorHands(Context context, boolean isStreamMode) {
     Preconditions.checkState(Looper.myLooper() != Looper.getMainLooper());
     this.isStreamMode = isStreamMode;
     if (isStreamMode) {

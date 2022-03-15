@@ -30,6 +30,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.camera.core.ExperimentalGetImage;
 import androidx.camera.core.ImageProxy;
+
+import com.example.gibalica.mlkitextensions.posedetector.PoseDetectorProcessor;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.example.gibalica.mlkitextensions.preference.PreferenceUtils;
@@ -37,6 +39,7 @@ import com.google.android.odml.image.MediaMlImageBuilder;
 import com.google.android.odml.image.MlImage;
 import com.google.mlkit.vision.common.InputImage;
 import java.nio.ByteBuffer;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -132,13 +135,16 @@ public abstract class VisionProcessorBase<T> implements VisionImageProcessor {
         // images when finished using them. Otherwise, new images may not be received or the camera
         // may stall.
         .addOnCompleteListener(results -> image.close());
-  }
+    }
   }
 
 
   protected boolean isMlImageEnabled(Context context) {
     return false;
   }
+
+  private int repNum = 0;
+
 
   // -----------------Common processing logic-------------------------------------------------------
   private Task<T> requestDetectInImage(
@@ -157,7 +163,32 @@ public abstract class VisionProcessorBase<T> implements VisionImageProcessor {
               totalRunMs += currentLatencyMs;
               maxRunMs = Math.max(currentLatencyMs, maxRunMs);
               minRunMs = Math.min(currentLatencyMs, minRunMs);
+              PoseDetectorProcessor.PoseWithClassification x = (PoseDetectorProcessor.PoseWithClassification)results;
+              List<String> list = x.getClassificationResult();
+              /*if (!list.isEmpty() && !list.get(0).isEmpty()){
+                  int rep = Integer.parseInt(list.get(0));
+                  System.out.println(rep);
+              }*/
+              try {
+                if (!list.isEmpty() && !list.get(0).isEmpty())
+                {
+                  System.out.println(list.get(0));
+                  for (String a: list.get(0).split(" "))
+                  {
+                    System.out.println(a);
+                  }
+                  String[] res = list.get(0).split(" ");
+                  if (res.length >= 4){
+                    repNum = Integer.parseInt(res[2]);
+                  }
+                }
+              }
+              catch (Exception e){
+                repNum = 0;
+              }
 
+
+             // (PoseDetectorProcessor.PoseWithClassification)results.getClassificationResult();
               // Only log inference info once per second. When frameProcessedInOneSecondInterval is
               // equal to 1, it means this is the first frame processed during the current second.
               if (frameProcessedInOneSecondInterval == 1) {
@@ -208,4 +239,8 @@ public abstract class VisionProcessorBase<T> implements VisionImageProcessor {
   protected abstract void onSuccess(@NonNull T results, @NonNull GraphicOverlay graphicOverlay);
 
   protected abstract void onFailure(@NonNull Exception e);
+
+  public int getRepNum() {
+    return repNum;
+  }
 }

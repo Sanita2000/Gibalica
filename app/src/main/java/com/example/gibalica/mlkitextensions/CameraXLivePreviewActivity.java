@@ -18,13 +18,17 @@ package com.example.gibalica.mlkitextensions;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.util.Size;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -86,6 +90,28 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   private int lensFacing = CameraSelector.LENS_FACING_FRONT;
   private CameraSelector cameraSelector;
 
+
+  private static int TIMER = 10000;
+  private TextView tw;
+
+  private CountDownTimer Timer = new CountDownTimer(TIMER, 1000) {
+
+    public void onTick(long millisUntilFinished) {
+      System.out.println("--------------------------------------------");
+      System.out.println(tw == null);
+      tw.setText("" + millisUntilFinished / 1000);
+    }
+
+    public void onFinish() {
+      imageProcessor.stop();
+      int score = imageProcessor.getRepNum();
+      System.out.println("REPETITIONS: "  + imageProcessor.getRepNum());
+      Intent i = new Intent(getApplicationContext(), TrainingResultActivity.class);
+      i.putExtra("score", score);
+      startActivity(i);
+    }
+  };
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -95,6 +121,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     Log.d(TAG, "cameraSelector");
     setContentView(R.layout.activity_vision_camerax_live_preview);
     previewView = findViewById(R.id.preview_view);
+    tw = (TextView) findViewById(R.id.timeRemainedTextView);
     if (previewView == null) {
       Log.d(TAG, "previewView is null");
     }
@@ -124,7 +151,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
               }
             });
 
-
+    Timer.start();
   }
 
   @Override
@@ -225,7 +252,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
               //PreferenceUtils.shouldShowPoseDetectionInFrameLikelihoodLivePreview(this);
       boolean visualizeZ = true;//PreferenceUtils.shouldPoseDetectionVisualizeZ(this);
       boolean rescaleZ = true;//PreferenceUtils.shouldPoseDetectionRescaleZForVisualization(this);
-      boolean runClassification = true;PreferenceUtils.shouldPoseDetectionRunClassification(this);
+      boolean runClassification = true;//PreferenceUtils.shouldPoseDetectionRunClassification(this);
       imageProcessor =
               new PoseDetectorProcessor(
                       this,
@@ -255,7 +282,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
 
     needUpdateGraphicOverlayImageSourceInfo = true;
     analysisUseCase.setAnalyzer(
-        // imageProcessor.processImageProxy will use another thread to run the detection underneath,
+        //imageProcessor.processImageProxy will use another thread to run the detection underneath,
         // thus we can just runs the analyzer itself on main thread.
         ContextCompat.getMainExecutor(this),
         imageProxy -> {

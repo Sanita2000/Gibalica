@@ -56,7 +56,7 @@ public class PoseDetectorProcessor
 
   private PoseClassifierProcessor poseClassifierProcessor;
   /** Internal class to hold Pose and classification results. */
-  protected static class PoseWithClassification {
+  public static class PoseWithClassification {
     private final Pose pose;
     private final List<String> classificationResult;
 
