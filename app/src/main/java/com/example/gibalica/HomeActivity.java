@@ -14,9 +14,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
-    public void goToTraining(View v) {
-        Intent iTraining = new Intent(this, TrainingActivity.class);
-        startActivity(iTraining);
+    public void goToSelectTraining(View v) {
+        Intent iSTraining = new Intent(this, SelectTrainingActivity.class);
+        startActivity(iSTraining);
     }
     public void goToCompete(View v) {
         Intent iCompete = new Intent(this, CompeteActivity.class);
@@ -29,6 +29,10 @@ public class HomeActivity extends AppCompatActivity {
     public void goToSettings(View v) {
         Intent iSettings = new Intent(this, SettingsActivity.class);
         startActivity(iSettings);
+    }
+    public void goToInfo(View v) {
+        Intent iInfo = new Intent(this, InformationActivity.class);
+        startActivity(iInfo);
     }
 
 }

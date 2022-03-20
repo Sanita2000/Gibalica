@@ -80,4 +80,15 @@
         app:layout_constraintTop_toTopOf="@+id/seekBar3"
         app:layout_constraintVertical_bias="0.444" />
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Show guide"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar3"
+        app:layout_constraintStart_toStartOf="@+id/seekBar3"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar3"
+        android:onClick="goToGuide"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

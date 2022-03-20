@@ -10,4 +10,7 @@
     <color name="darkblue">#00186f</color>
     <color name="lightblue">#6668d0</color>
     <color name="blue">#2f3e9e</color>
+    <color name="purple">#4E4289</color>
+    <color name="gray">#00B0F0</color>
+
 </resources>

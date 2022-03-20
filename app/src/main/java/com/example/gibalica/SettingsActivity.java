@@ -1,6 +1,8 @@
 package com.example.gibalica;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -31,9 +33,10 @@ public class SettingsActivity extends AppCompatActivity {
     CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
         if(buttonView.isChecked()){
             Toast.makeText(SettingsActivity.this, buttonView.getText() , Toast.LENGTH_SHORT).show();
-        }else{
-
         }
-
     };
+    public void goToGuide(View v) {
+        Intent iGuide = new Intent(this, GuideActivity.class);
+        startActivity(iGuide);
+    }
 }
