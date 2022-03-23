@@ -28,8 +28,8 @@ public class SettingsActivity extends AppCompatActivity {
         // using SharedPreferences
         sp = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sp.edit();
-        final boolean isDarkModeOn = sp.getBoolean("isDarkModeOn", false);
-        final boolean isChecked = sp.getBoolean("isChecked", false);
+        //final boolean isDarkModeOn = sp.getBoolean("isDarkModeOn", false);
+        //final boolean isChecked = sp.getBoolean("isChecked", false);
         final boolean isTTSChecked = sp.getBoolean("isTTSChecked", false);
         final String fontSize = sp.getString("fontSize", "small");
         final int seekBarProgress = sp.getInt("seekBarProgress", 0);
@@ -56,25 +56,21 @@ public class SettingsActivity extends AppCompatActivity {
 
         // When user reopens the app
         // after applying dark/light mode
-        if (isDarkModeOn) {
+        /*if (isDarkModeOn) {
             nightMode.setText("Disable Dark Mode");
         }
         else {
             nightMode.setText("Enable Dark Mode");
-        }
+        } */
 
-        nightMode.setChecked(isChecked);
+        //nightMode.setChecked(isChecked);
         tts.setChecked(isTTSChecked);
         fontSizeBar.setProgress(seekBarProgress);
 
-        nightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*nightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isCheckedNow) {
                 if (!isCheckedNow) {
-                    // if dark mode is on it
-                    // will turn it off
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    // it will set isDarkModeOn
-                    // boolean to false
                     editor.putBoolean("isDarkModeOn", false);
                     editor.putBoolean("isChecked", false);
                     editor.apply();
@@ -83,12 +79,8 @@ public class SettingsActivity extends AppCompatActivity {
                     nightMode.setText("Enable Dark Mode");
                 }
                 else {
-                    // if dark mode is off
-                    // it will turn it on
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
-                    // it will set isDarkModeOn
-                    // boolean to true
                     editor.putBoolean("isDarkModeOn", true);
                     editor.putBoolean("isChecked", true);
                     editor.apply();
@@ -97,9 +89,9 @@ public class SettingsActivity extends AppCompatActivity {
                     nightMode.setText("Disable Dark Mode");
                 }
             }
-        });
+        }); */
 
-        tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isCheckedNow) {
                 editor.putBoolean("isTextToSpeechOn", isCheckedNow);
                 editor.putBoolean("isTTSChecked", isCheckedNow);
@@ -109,7 +101,7 @@ public class SettingsActivity extends AppCompatActivity {
                     textToSpeech.speak("TESTING", TextToSpeech.QUEUE_FLUSH, null, null);
                 }
             }
-        });
+        }); */
 
         fontSizeBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -144,7 +136,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        //nightMode.setOnCheckedChangeListener(listener);
+        nightMode.setOnCheckedChangeListener(listener);
         contrast.setOnCheckedChangeListener(listener);
     }
 

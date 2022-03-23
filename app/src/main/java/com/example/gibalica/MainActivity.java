@@ -28,16 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        final boolean isDarkModeOn = sp.getBoolean("isDarkModeOn", false);
+        //final boolean isDarkModeOn = sp.getBoolean("isDarkModeOn", false);
 
         // When user reopens the app
         // after applying dark/light mode
-        if (isDarkModeOn) {
+        /*if (isDarkModeOn && getResources().getString(R.string.mode).equals("Day")) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+        }*/
 
         Intent iHello = new Intent(this, HelloActivity.class);
         new CountDownTimer(3000, 1000) {
