@@ -28,6 +28,7 @@ public class GuideActivity extends AppCompatActivity {
     adapter.addFragment(new Fragment1(), "F1");
     adapter.addFragment(new Fragment2(), "F2");
     adapter.addFragment(new Fragment3(), "F3");
+
     viewPager.setAdapter(adapter);
     }
 

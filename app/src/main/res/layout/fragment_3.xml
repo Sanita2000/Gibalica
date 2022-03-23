@@ -4,28 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/back_grad">
 
-    <TextView
-        android:id="@+id/textView93"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Page three"
-        android:textColor="@color/darkblue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/button63"
         android:layout_width="119dp"
         android:layout_height="37dp"
-        android:text="Go to home"
         android:background="@drawable/round_corner"
+        android:onClick="goToFragment"
+        android:text="Go to home"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView93"
-        app:layout_constraintStart_toStartOf="@+id/textView93"
-        app:layout_constraintTop_toBottomOf="@+id/textView93"
-        android:onClick="goToFragment"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="324dp"
+        android:layout_height="514dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/g4" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="263dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/compete_mode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
