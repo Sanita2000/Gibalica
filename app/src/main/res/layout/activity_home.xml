@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="62dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="316dp"
         android:contentDescription="@string/settings_button"
         android:onClick="goToSettings"
+        android:background="@drawable/round_shapesettings"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_settings_24"
@@ -20,52 +23,80 @@
 
     <Button
         android:id="@+id/training_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="341dp"
+        android:layout_width="128dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/round_corner"
+        android:onClick="goToSelectTraining"
         android:text="Training"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="goToSelectTraining"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/compete_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="128dp"
+        android:layout_height="46dp"
+        android:background="@drawable/round_corner"
         android:onClick="goToCompete"
         android:text="compete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/training_button"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/training_button"
-        app:layout_constraintTop_toBottomOf="@+id/training_button"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.481" />
 
     <Button
         android:id="@+id/day_night_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="88dp"
+        android:background="@drawable/round_corner"
         android:onClick="goToDayNight"
         android:text="Day-Night"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/compete_button"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="@+id/compete_button"
-        app:layout_constraintTop_toBottomOf="@+id/compete_button"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.79" />
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="109dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="24dp"
+        android:background="#00FFFFFF"
+        android:onClick="goToInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minilogo"
-        android:onClick="goToInfo"/>
+        app:srcCompat="@drawable/minilogo" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="138dp"
+        android:layout_height="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/learnmore" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="374dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382"
+        app:srcCompat="@drawable/options" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

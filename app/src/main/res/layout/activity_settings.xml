@@ -3,33 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="113dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginBottom="599dp"
-        android:text="SETTINGS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginBottom="412dp"
         android:text="Text-To-Speech"
+        android:textColor="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView24" />
 
     <Switch
         android:id="@+id/switch2"
@@ -37,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Night mode"
+        android:textColor="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="@+id/switch1"
@@ -49,17 +37,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Contrast"
+        android:textColor="@color/darkblue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/switch2"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="@+id/switch2"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        app:layout_constraintVertical_bias="0.036" />
 
     <SeekBar
         android:id="@+id/seekBar3"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
         android:layout_width="151dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="240dp"
         android:max="2"
         android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,23 +63,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Font size"
-        android:textColor="@android:color/white"
+        android:textColor="@color/darkblue"
+
         app:layout_constraintBottom_toBottomOf="@+id/seekBar3"
         app:layout_constraintEnd_toStartOf="@+id/seekBar3"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seekBar3"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_corner"
+        android:onClick="goToGuide"
         android:text="Show guide"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/seekBar3"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="@+id/seekBar3"
         app:layout_constraintTop_toBottomOf="@+id/seekBar3"
-        android:onClick="goToGuide"/>
+        app:layout_constraintVertical_bias="0.036" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="306dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.278"
+        app:srcCompat="@drawable/settings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

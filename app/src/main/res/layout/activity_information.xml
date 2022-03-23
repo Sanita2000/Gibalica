@@ -7,220 +7,159 @@
     android:layout_marginStart="1dp"
     android:layout_marginTop="1dp"
     android:layout_marginEnd="1dp"
-    android:layout_marginBottom="1dp">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    tools:context=".InformationActivity">
+    android:layout_marginBottom="1dp"
+    android:background="@drawable/back_grad">
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="243dp"
-        android:layout_height="111dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/innosidlogo" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="The INNOSID project’s goal is to improve the social inclusion of people with disabilities (PWD) by creating innovative IT solutions based on emerging technologies (ET)."
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-        app:layout_constraintHorizontal_bias="0.346"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        tools:context=".InformationActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-5dp">
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="128dp"
-        android:layout_height="121dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:srcCompat="@drawable/jurica_babic" />
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="134dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/innosidlogo" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="240dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="572dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:srcCompat="@drawable/anita_karalyos" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="365dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="24dp"
+            android:text="The INNOSID project’s goal is to improve the social inclusion of people with disabilities (PWD) by creating innovative IT solutions based on emerging technologies (ET)."
+            android:textColor="@color/darkblue"
+            app:layout_constraintEnd_toEndOf="@+id/imageView15"
+            app:layout_constraintHorizontal_bias="0.914"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="127dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="564dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:srcCompat="@drawable/ana_leventic" />
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="144dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView25"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:layout_constraintTop_toBottomOf="@+id/textView25"
+            app:srcCompat="@drawable/gibalicag1_logo6reduced" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Luis Madeira"
-        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toStartOf="@+id/imageView11"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="151dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/eulogo" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="92dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="72dp"
-        android:text="Ana Leventić"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Project reference: 2019-1-HR01-KA203-060959"
+            android:textColor="@color/lightblue"
+            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="126dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        app:srcCompat="@drawable/luis_madeira" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="176dp"
+            android:layout_height="162dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintVertical_bias="0.24"
+            app:srcCompat="@drawable/jurica_babic" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Ivan Sentić"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintHorizontal_bias="0.584"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="141dp"
+            android:layout_height="141dp"
+            android:layout_marginTop="436dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.171"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:srcCompat="@drawable/ana_leventic" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="227dp"
-        android:layout_height="153dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView18"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:srcCompat="@drawable/ivan_sentic" />
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="151dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="436dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.937"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:srcCompat="@drawable/ivan_sentic" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Team members"
-        app:layout_constraintEnd_toEndOf="@+id/textView26"
-        app:layout_constraintHorizontal_bias="0.772"
-        app:layout_constraintStart_toStartOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="139dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.177"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            app:srcCompat="@drawable/anita_karalyos" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="192dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.373"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:srcCompat="@drawable/patricia_valcarcel" />
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="154dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            app:srcCompat="@drawable/patricia_valcarcel" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Patricia Valcarcel"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="0.469"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="243dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="216dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            app:srcCompat="@drawable/luis_madeira" />
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Anita Karalyos"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.579"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="239dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="144dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:srcCompat="@drawable/supervisor" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Supervisor"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="240dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="368dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:srcCompat="@drawable/team_members" />
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="205dp"
-        android:layout_height="208dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView25"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:srcCompat="@drawable/gibalicag1_logo6_hc" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:srcCompat="@drawable/eulogo" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Project reference: 2019-1-HR01-KA203-060959"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Jurica Babić"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

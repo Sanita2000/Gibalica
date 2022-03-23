@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textView81"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Page one"
+        android:textColor="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,12 +19,13 @@
 
     <Button
         android:id="@+id/button61"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="119dp"
+        android:layout_height="37dp"
+        android:background="@drawable/round_corner"
+        android:onClick="goToFragment"
         android:text="Go to next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView81"
         app:layout_constraintStart_toStartOf="@+id/textView81"
-        app:layout_constraintTop_toBottomOf="@+id/textView81"
-        android:onClick="goToFragment"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView81" />
 </androidx.constraintlayout.widget.ConstraintLayout>
