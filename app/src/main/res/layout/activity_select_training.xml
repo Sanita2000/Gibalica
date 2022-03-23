@@ -15,9 +15,11 @@
         android:onClick="goToTraining"
         android:text="LEFT HAND"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425"
-        tools:layout_editor_absoluteX="59dp" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <Button
         android:id="@+id/button7"
