@@ -24,10 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CameraActivity"
-            android:parentActivityName=".HomeActivity">
-        </activity>
-        <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".HomeActivity">
         </activity>
