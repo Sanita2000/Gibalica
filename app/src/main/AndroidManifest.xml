@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.hardware.camera2.full"></uses-permission>
+    <uses-feature android:name="android.hardware.camera" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -65,6 +67,8 @@
             android:name=".InformationActivity"
             android:parentActivityName=".HomeActivity">
         </activity>
+            android:parentActivityName=".CompeteActivity" />
+
     </application>
     <uses-feature android:name="android.hardware.camera" />
 
