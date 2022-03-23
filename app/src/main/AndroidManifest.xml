@@ -56,6 +56,10 @@
             android:parentActivityName=".CompeteActivity">
         </activity>
         <activity
+            android:name=".StartTraining"
+            android:parentActivityName=".StartTraining">
+        </activity>
+        <activity
             android:name=".SelectTrainingActivity"
             android:parentActivityName=".HomeActivity">
         </activity>
@@ -63,8 +67,11 @@
             android:name=".InformationActivity"
             android:parentActivityName=".HomeActivity">
         </activity>
-            android:parentActivityName=".CompeteActivity" />
 
+        <activity android:name=".mlkitextensions.CameraXLivePreviewActivity" />
+        <activity
+            android:name=".mlkitextensions.TrainingResultActivity"
+            android:exported="false" />
     </application>
     <uses-feature android:name="android.hardware.camera" />
 

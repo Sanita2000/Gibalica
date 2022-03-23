@@ -42,8 +42,9 @@ public class PoseClassifierProcessor {
   // These are the labels in the given {@code POSE_SAMPLES_FILE}. You can set your own class labels
   // for your pose samples.
   private static final String JUMP_CLASS = "jump";
+  private static final String HANDS_CLASS = "raisedhand";
   private static final String[] POSE_CLASSES = {
-          JUMP_CLASS
+          JUMP_CLASS, HANDS_CLASS
   };
 
   private final boolean isStreamMode;

@@ -52,11 +52,14 @@
 
     <TextView
         android:id="@+id/timeRemainedTextView"
-        android:layout_width="0dp"
+        android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#E91E63"
-        android:textSize="34sp" />
+        android:text="2"
+        android:textAlignment="center"
+        android:textColor="#4E4289"
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
   </LinearLayout>
 

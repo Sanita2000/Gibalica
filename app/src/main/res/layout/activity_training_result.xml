@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".mlkitextensions.TrainingResultActivity">
 
     <TextView
         android:id="@+id/score2TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#4E4289"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/your_score"
+        android:textColor="#4E4289"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/score2TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,15 +34,17 @@
 
     <Button
         android:id="@+id/backToMainMenuBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/round_corner"
         android:onClick="goToMenu"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.899" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

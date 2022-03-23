@@ -14,7 +14,17 @@ public class SelectTrainingActivity extends AppCompatActivity {
     }
 
     public void goToTraining(View v) {
-        Intent iTraining = new Intent(this, TrainingActivity.class);
+        Intent iTraining = new Intent(this, StartTraining.class);
+        startActivity(iTraining);
+    }
+
+    public void goToJumpingJacks(View v) {
+        Intent iTraining = new Intent(this, StartTraining.class);
+        startActivity(iTraining);
+    }
+
+    public void goToHand(View v) {
+        Intent iTraining = new Intent(this, StartTraining.class);
         startActivity(iTraining);
     }
 
