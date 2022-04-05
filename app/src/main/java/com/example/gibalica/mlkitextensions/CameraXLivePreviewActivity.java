@@ -44,6 +44,7 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory;
 
+import com.example.gibalica.HomeActivity;
 import com.example.gibalica.R;
 import com.example.gibalica.mlkitextensions.automl.AutoMLImageLabelerProcessor;
 import com.example.gibalica.mlkitextensions.posedetector.PoseDetectorProcessor;
@@ -80,6 +81,10 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   private PreviewView previewView;
   private GraphicOverlay graphicOverlay;
 
+  private static final int REQUEST_CAMERA_PERMISSION = 200;
+
+  private String poseName;
+
   @Nullable private ProcessCameraProvider cameraProvider;
   @Nullable private Preview previewUseCase;
   @Nullable private ImageAnalysis analysisUseCase;
@@ -94,7 +99,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   private static int TIMER = 10000;
   private TextView tw;
 
-  private CountDownTimer Timer = new CountDownTimer(TIMER, 1000) {
+  protected CountDownTimer Timer = new CountDownTimer(TIMER, 1000) {
 
     public void onTick(long millisUntilFinished) {
       System.out.println("--------------------------------------------");
@@ -135,6 +140,9 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     options.add(CUSTOM_AUTOML_LABELING);
     options.add(CUSTOM_AUTOML_OBJECT_DETECTION);
 
+
+    Bundle b = getIntent().getExtras();
+    this.poseName = b.getString("pose");
     // Creating adapter for spinner
 
 
@@ -253,10 +261,12 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
       boolean visualizeZ = true;//PreferenceUtils.shouldPoseDetectionVisualizeZ(this);
       boolean rescaleZ = true;//PreferenceUtils.shouldPoseDetectionRescaleZForVisualization(this);
       boolean runClassification = true;//PreferenceUtils.shouldPoseDetectionRunClassification(this);
+      System.out.println("POSE: "+this.poseName);
       imageProcessor =
               new PoseDetectorProcessor(
                       this,
                       poseDetectorOptions,
+                      this.poseName,
                       shouldShowInFrameLikelihood,
                       visualizeZ,
                       rescaleZ,
@@ -359,13 +369,14 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   }
 
   @Override
-  public void onRequestPermissionsResult(
-      int requestCode, String[] permissions, int[] grantResults) {
-    Log.i(TAG, "Permission granted!");
-    if (allPermissionsGranted()) {
-      bindAllCameraUseCases();
-    }
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    if (requestCode == REQUEST_CAMERA_PERMISSION) {
+      if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+        Toast.makeText(this, "You can't use camera without permission", Toast.LENGTH_SHORT).show();
+        finish();
+      }
+    }
   }
 
   private static boolean isPermissionGranted(Context context, String permission) {
@@ -377,4 +388,13 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     Log.i(TAG, "Permission NOT granted: " + permission);
     return true;
   }
+
+  @Override
+  public void onBackPressed() {
+    imageProcessor.stop();
+    Timer.cancel();
+    Intent i = new Intent(this, HomeActivity.class);
+    startActivity(i);
+  }
+
 }

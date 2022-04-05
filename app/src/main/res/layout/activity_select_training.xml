@@ -12,7 +12,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="68dp"
         android:background="@drawable/round_corner"
-        android:onClick="goToTraining"
+        android:onClick="goToHand"
         android:text="RAISE HAND"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

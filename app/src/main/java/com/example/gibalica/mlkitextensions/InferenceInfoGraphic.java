@@ -51,7 +51,7 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
     float x = TEXT_SIZE * 0.5f;
     float y = TEXT_SIZE * 1.5f;
 
-    canvas.drawText(
+  /*  canvas.drawText(
         "InputImage size: " + overlay.getImageHeight() + "x" + overlay.getImageWidth(),
         x,
         y,
@@ -63,6 +63,6 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
           "FPS: " + framesPerSecond + ", latency: " + latency + " ms", x, y + TEXT_SIZE, textPaint);
     } else {
       canvas.drawText("Latency: " + latency + " ms", x, y + TEXT_SIZE, textPaint);
-    }
+    }*/
   }
 }

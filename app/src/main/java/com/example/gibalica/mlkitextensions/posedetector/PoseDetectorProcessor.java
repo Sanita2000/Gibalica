@@ -45,7 +45,7 @@ public class PoseDetectorProcessor
   private static final String TAG = "PoseDetectorProcessor";
 
   private final PoseDetector detector;
-
+  private String poseName;
   private final boolean showInFrameLikelihood;
   private final boolean visualizeZ;
   private final boolean rescaleZForVisualization;
@@ -77,6 +77,7 @@ public class PoseDetectorProcessor
   public PoseDetectorProcessor(
       Context context,
       PoseDetectorOptionsBase options,
+      String poseName,
       boolean showInFrameLikelihood,
       boolean visualizeZ,
       boolean rescaleZForVisualization,
@@ -90,6 +91,7 @@ public class PoseDetectorProcessor
     this.runClassification = runClassification;
     this.isStreamMode = isStreamMode;
     this.context = context;
+    this.poseName = poseName;
     classificationExecutor = Executors.newSingleThreadExecutor();
   }
 
@@ -120,15 +122,13 @@ public class PoseDetectorProcessor
               List<String> classificationResult = new ArrayList<>();
               if (runClassification) {
                 if (poseClassifierProcessor == null) {
-                  poseClassifierProcessor = new PoseClassifierProcessor(context, isStreamMode);
+                  poseClassifierProcessor = new PoseClassifierProcessor(context, isStreamMode, poseName);
                 }
                 classificationResult = poseClassifierProcessor.getPoseResult(pose);
               }
               return new PoseWithClassification(pose, classificationResult);
             });
   }
-
-
 
   @Override
   protected void onSuccess(

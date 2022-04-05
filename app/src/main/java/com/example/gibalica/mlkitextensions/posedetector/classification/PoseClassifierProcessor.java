@@ -36,8 +36,8 @@ import java.util.Locale;
  */
 public class PoseClassifierProcessor {
   private static final String TAG = "PoseClassifierProcessor";
-  private static final String POSE_SAMPLES_FILE = "pose/fitness_poses_csvs_out_JJ.csv";
-
+  private static final String POSE_SAMPLES_FILE_JJ = "pose/fitness_poses_csvs_out_JJ.csv";
+  private static final String POSE_SAMPLES_FILE_H = "pose/fitness_poses_csvs_out.csv";
   // Specify classes for which we want rep counting.
   // These are the labels in the given {@code POSE_SAMPLES_FILE}. You can set your own class labels
   // for your pose samples.
@@ -53,11 +53,13 @@ public class PoseClassifierProcessor {
   private List<RepetitionCounter> repCounters;
   private PoseClassifier poseClassifier;
   private String lastRepResult;
+  private String poseName;
 
   @WorkerThread
-  public PoseClassifierProcessor(Context context, boolean isStreamMode) {
+  public PoseClassifierProcessor(Context context, boolean isStreamMode, String poseName) {
     Preconditions.checkState(Looper.myLooper() != Looper.getMainLooper());
     this.isStreamMode = isStreamMode;
+    this.poseName = poseName;
     if (isStreamMode) {
       emaSmoothing = new EMASmoothing();
       repCounters = new ArrayList<>();
@@ -68,9 +70,15 @@ public class PoseClassifierProcessor {
 
   private void loadPoseSamples(Context context) {
     List<PoseSample> poseSamples = new ArrayList<>();
+    String fileName = POSE_SAMPLES_FILE_H;
+    if (this.poseName == "jump"){
+      fileName = POSE_SAMPLES_FILE_JJ;
+    }else if (this.poseName == "raisedhand"){
+      fileName = POSE_SAMPLES_FILE_H;
+    }
     try {
       BufferedReader reader = new BufferedReader(
-          new InputStreamReader(context.getAssets().open(POSE_SAMPLES_FILE)));
+          new InputStreamReader(context.getAssets().open(fileName)));
       String csvLine = reader.readLine();
       while (csvLine != null) {
         // If line is not a valid {@link PoseSample}, we'll get null and skip adding to the list.
@@ -85,9 +93,7 @@ public class PoseClassifierProcessor {
     }
     poseClassifier = new PoseClassifier(poseSamples);
     if (isStreamMode) {
-      for (String className : POSE_CLASSES) {
-        repCounters.add(new RepetitionCounter(className));
-      }
+        repCounters.add(new RepetitionCounter(this.poseName));
     }
   }
 
@@ -124,7 +130,7 @@ public class PoseClassifierProcessor {
           ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
           tg.startTone(ToneGenerator.TONE_PROP_BEEP);
           lastRepResult = String.format(
-              Locale.US, "%s : %d reps", repCounter.getClassName(), repsAfter);
+              Locale.US, "%s : %d reps", "Repetition:", repsAfter);
           break;
         }
       }
@@ -140,7 +146,7 @@ public class PoseClassifierProcessor {
           maxConfidenceClass,
           classification.getClassConfidence(maxConfidenceClass)
               / poseClassifier.confidenceRange());
-      result.add(maxConfidenceClassResult);
+      //result.add(maxConfidenceClassResult);
     }
 
     return result;
