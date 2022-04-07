@@ -76,34 +76,31 @@ public class SettingsActivity extends AppCompatActivity {
                     editor.putBoolean("isDarkModeOn", false);
                     editor.putBoolean("isChecked", false);
                     editor.apply();
-
                     // change text of Button
                     nightMode.setText("Enable Dark Mode");
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
                     editor.putBoolean("isDarkModeOn", true);
                     editor.putBoolean("isChecked", true);
                     editor.apply();
-
                     // change text of Button
                     nightMode.setText("Disable Dark Mode");
                 }
             }
         }); */
 
-        /*tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isCheckedNow) {
                 editor.putBoolean("isTextToSpeechOn", isCheckedNow);
                 editor.putBoolean("isTTSChecked", isCheckedNow);
                 editor.apply();
-                if(isCheckedNow){
-                    //start tts
-                    textToSpeech.speak("TESTING", TextToSpeech.QUEUE_FLUSH, null, null);
-                }
+                //if(isCheckedNow){
+                //start tts
+                //    textToSpeech.speak("TESTING", TextToSpeech.QUEUE_FLUSH, null, null);
+                //}
             }
-        }); */
+        });
 
         fontSizeBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

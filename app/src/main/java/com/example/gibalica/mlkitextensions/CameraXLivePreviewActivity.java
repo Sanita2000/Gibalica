@@ -46,7 +46,6 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory;
 
 import com.example.gibalica.HomeActivity;
 import com.example.gibalica.R;
-import com.example.gibalica.mlkitextensions.automl.AutoMLImageLabelerProcessor;
 import com.example.gibalica.mlkitextensions.posedetector.PoseDetectorProcessor;
 import com.google.android.gms.common.annotation.KeepName;
 //import com.google.mlkit.linkfirebase.FirebaseModelSource;
@@ -55,8 +54,6 @@ import com.google.android.gms.common.annotation.KeepName;
 ///import com.example.gibalica.mlkitextensions.automl.AutoMLImageLabelerProcessor.Mode;
 import com.example.gibalica.mlkitextensions.preference.PreferenceUtils;
 import com.google.mlkit.common.MlKitException;
-import com.google.mlkit.linkfirebase.FirebaseModelSource;
-import com.google.mlkit.vision.label.custom.CustomImageLabelerOptions;
 import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
 
 import java.util.ArrayList;
@@ -84,6 +81,7 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   private static final int REQUEST_CAMERA_PERMISSION = 200;
 
   private String poseName;
+  private int sec;
 
   @Nullable private ProcessCameraProvider cameraProvider;
   @Nullable private Preview previewUseCase;
@@ -96,26 +94,10 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
   private CameraSelector cameraSelector;
 
 
-  private static int TIMER = 10000;
+  protected int timer = 10000;
   private TextView tw;
 
-  protected CountDownTimer Timer = new CountDownTimer(TIMER, 1000) {
-
-    public void onTick(long millisUntilFinished) {
-      System.out.println("--------------------------------------------");
-      System.out.println(tw == null);
-      tw.setText("" + millisUntilFinished / 1000);
-    }
-
-    public void onFinish() {
-      imageProcessor.stop();
-      int score = imageProcessor.getRepNum();
-      System.out.println("REPETITIONS: "  + imageProcessor.getRepNum());
-      Intent i = new Intent(getApplicationContext(), TrainingResultActivity.class);
-      i.putExtra("score", score);
-      startActivity(i);
-    }
-  };
+  protected CountDownTimer Timer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -140,9 +122,35 @@ public final class CameraXLivePreviewActivity extends AppCompatActivity
     options.add(CUSTOM_AUTOML_LABELING);
     options.add(CUSTOM_AUTOML_OBJECT_DETECTION);
 
-
     Bundle b = getIntent().getExtras();
     this.poseName = b.getString("pose");
+    this.sec = b.getInt("sec");
+    if (this.sec == 0 ||this.sec == -1){
+      timer = 10;
+    }else{
+      timer = this.sec;
+    }
+    System.out.println("_time: " + timer);
+    timer *= 1000;
+    System.out.println("_time: " + timer);
+
+    Timer = new CountDownTimer(timer, 1000) {
+
+      public void onTick(long millisUntilFinished) {
+        tw.setText("" + millisUntilFinished / 1000);
+      }
+
+      public void onFinish() {
+        System.out.println("done_");
+        imageProcessor.stop();
+        int score = imageProcessor.getRepNum();
+        System.out.println("REPETITIONS: "  + imageProcessor.getRepNum());
+        Intent i = new Intent(getApplicationContext(), TrainingResultActivity.class);
+        i.putExtra("score", score);
+        i.putExtra("sec", sec);
+        startActivity(i);
+      }
+    };
     // Creating adapter for spinner
 
 

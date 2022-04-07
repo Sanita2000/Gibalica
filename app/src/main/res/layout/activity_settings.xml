@@ -30,7 +30,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView24"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Switch
         android:id="@+id/switch2"
@@ -39,6 +40,7 @@
         android:layout_marginTop="28dp"
         android:text="Night mode"
         android:textColor="@color/darkblue"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="@+id/switch1"
@@ -52,6 +54,7 @@
         android:layout_marginTop="28dp"
         android:text="Contrast"
         android:textColor="@color/darkblue"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/switch2"
         app:layout_constraintHorizontal_bias="0.473"
@@ -64,12 +67,12 @@
         style="@android:style/Widget.DeviceDefault.Light.SeekBar"
         android:layout_width="151dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="324dp"
         android:max="2"
         android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/switch3"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/switch3" />
 
     <TextView
@@ -81,7 +84,7 @@
 
         app:layout_constraintBottom_toBottomOf="@+id/seekBar3"
         app:layout_constraintEnd_toStartOf="@+id/seekBar3"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/seekBar3"
         app:layout_constraintVertical_bias="1.0" />
@@ -96,10 +99,10 @@
         android:text="Show guide"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/seekBar3"
-        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="@+id/seekBar3"
         app:layout_constraintTop_toBottomOf="@+id/seekBar3"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.377" />
 
     <ImageView
         android:id="@+id/imageView24"

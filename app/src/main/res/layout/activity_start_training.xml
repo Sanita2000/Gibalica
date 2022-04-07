@@ -7,6 +7,7 @@
     android:background="@drawable/background"
     tools:context=".StartTraining">
 
+
     <Button
         android:id="@+id/button6"
         android:layout_width="127dp"
@@ -19,8 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
-
+        app:layout_constraintVertical_bias="0.427" />
 
     <TextView
         android:id="@+id/time"
@@ -34,4 +34,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
         app:layout_constraintVertical_bias="0.392" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="267dp"
+        android:layout_height="132dp"
+        android:text="Position yourself in front of the camera and press START when you are ready! "
+        android:textAlignment="center"
+        android:textColor="#4E4289"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
 </androidx.constraintlayout.widget.ConstraintLayout>

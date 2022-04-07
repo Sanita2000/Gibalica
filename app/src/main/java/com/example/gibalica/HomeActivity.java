@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(iTraining);
     }
     public void goToCompete(View v) {
-        Intent iTraining = new Intent(this, SelectTrainingActivity.class);
+        Intent iTraining = new Intent(this, CompeteActivity.class);
         startActivity(iTraining);
     }
     public void goToDayNight(View v) {

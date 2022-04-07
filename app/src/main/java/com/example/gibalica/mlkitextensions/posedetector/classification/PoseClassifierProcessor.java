@@ -38,11 +38,13 @@ public class PoseClassifierProcessor {
   private static final String TAG = "PoseClassifierProcessor";
   private static final String POSE_SAMPLES_FILE_JJ = "pose/fitness_poses_csvs_out_JJ.csv";
   private static final String POSE_SAMPLES_FILE_H = "pose/fitness_poses_csvs_out.csv";
+  private static final String POSE_SAMPLES_FILE_SQUATS = "pose/squat.csv";
   // Specify classes for which we want rep counting.
   // These are the labels in the given {@code POSE_SAMPLES_FILE}. You can set your own class labels
   // for your pose samples.
   private static final String JUMP_CLASS = "jump";
   private static final String HANDS_CLASS = "raisedhand";
+  private static final String SQUAT_CLASS = "squats_down";
   private static final String[] POSE_CLASSES = {
           JUMP_CLASS, HANDS_CLASS
   };
@@ -60,6 +62,7 @@ public class PoseClassifierProcessor {
     Preconditions.checkState(Looper.myLooper() != Looper.getMainLooper());
     this.isStreamMode = isStreamMode;
     this.poseName = poseName;
+    System.out.println("posename: " + poseName);
     if (isStreamMode) {
       emaSmoothing = new EMASmoothing();
       repCounters = new ArrayList<>();
@@ -71,11 +74,22 @@ public class PoseClassifierProcessor {
   private void loadPoseSamples(Context context) {
     List<PoseSample> poseSamples = new ArrayList<>();
     String fileName = POSE_SAMPLES_FILE_H;
-    if (this.poseName == "jump"){
+
+    switch (poseName){
+      case ("jump"): fileName = POSE_SAMPLES_FILE_JJ; break;
+      case ("raisedhand"): fileName = POSE_SAMPLES_FILE_H; break;
+      case ("squat"): fileName = POSE_SAMPLES_FILE_SQUATS; this.poseName= "squats_down"; break;
+    }
+    /*if (this.poseName == "jump"){
       fileName = POSE_SAMPLES_FILE_JJ;
-    }else if (this.poseName == "raisedhand"){
+    }
+    if (this.poseName == "raisedhand"){
       fileName = POSE_SAMPLES_FILE_H;
     }
+    if (this.poseName == "squat"){
+      fileName = POSE_SAMPLES_FILE_SQUATS;
+    }*/
+    System.out.println("filename: " + fileName);
     try {
       BufferedReader reader = new BufferedReader(
           new InputStreamReader(context.getAssets().open(fileName)));

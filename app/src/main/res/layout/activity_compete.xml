@@ -28,13 +28,12 @@
         android:layout_marginTop="44dp"
         android:background="@drawable/round_corner"
         android:onClick="goToCompetingEasy"
-        android:text="Easy - 10 sec"
+        android:text="Easy - 20 sec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.286" />
 
     <Button
         android:id="@+id/button4"
@@ -43,13 +42,13 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/round_corner"
         android:onClick="goToCompetingMedium"
-        android:text="Medium - 5 sec"
+        android:text="Medium - 10 sec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.171" />
 
     <Button
         android:id="@+id/button5"
@@ -58,12 +57,13 @@
         android:layout_marginTop="48dp"
         android:background="@drawable/round_corner"
         android:onClick="goToCompetingHard"
-        android:text="HARD - 2 SEC"
+        android:text="HARD - 5 SEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.006"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UsingOnClickInXml" />
 
     <ImageView
@@ -76,4 +76,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.235"
         app:srcCompat="@drawable/choosedifficulty" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="340dp"
+        android:layout_height="67dp"
+        android:text="Goal: 10 repetitions"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.644" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
