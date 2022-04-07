@@ -2,7 +2,6 @@ package com.example.gibalica;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -97,20 +96,6 @@ public class DayNightActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
-        final String fontSize = sp.getString("fontSize", "small");
-
-        switch (fontSize){
-            case "large":
-                this.setTheme(R.style.Theme_Gibalica_Large_Font);
-                break;
-            case "medium":
-                this.setTheme(R.style.Theme_Gibalica_Medium_Font);
-                break;
-            default:
-                this.setTheme(R.style.Theme_Gibalica);
-        }
-
         setContentView(R.layout.activity_day_night);
 
         resultTextView = (TextView)findViewById(R.id.resulttextView);
