@@ -93,17 +93,17 @@ public class SettingsActivity extends AppCompatActivity {
             }
         }); */
 
-        /*tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        tts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isCheckedNow) {
                 editor.putBoolean("isTextToSpeechOn", isCheckedNow);
                 editor.putBoolean("isTTSChecked", isCheckedNow);
                 editor.apply();
-                if(isCheckedNow){
+                //if(isCheckedNow){
                     //start tts
-                    textToSpeech.speak("TESTING", TextToSpeech.QUEUE_FLUSH, null, null);
-                }
+                //    textToSpeech.speak("TESTING", TextToSpeech.QUEUE_FLUSH, null, null);
+                //}
             }
-        }); */
+        });
 
         fontSizeBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
